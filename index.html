@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yashi Jangid 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Quicksand&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-pink: #ff69b4;
+      --accent-pink: #ffc0cb;
+      --text-dark: #333;
+      --text-light: #555;
+      --bg-gradient: linear-gradient(to right, #ffe0ec, #f7f0ff);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-bottom: 2px solid var(--accent-pink);
+    }
+
+    nav a {
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--primary-pink);
+      font-weight: bold;
+      font-family: 'Playfair Display', serif;
+      transition: transform 0.3s ease, color 0.3s ease;
+      font-size: clamp(0.9rem, 4vw, 1.2rem);
+      word-break: break-word;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    nav a:hover {
+      color: #c71585;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 400px) {
+      nav {
+        flex-direction: column;
+        padding: 0.5rem;
+      }
+      nav a {
+        margin: 0.3rem 0;
+        font-size: 1rem;
+      }
+    }
+
+    section {
+      min-height: 100vh;
+      padding: 7rem 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      animation: fadeIn 1s ease-in;
+      position: relative;
+      text-align: center;
+    }
+
+    section#intro p {
+        font-size: clamp(1.2rem, 3vw, 1.5rem); /* Bigger text */
+        max-width: 800px;
+        margin: 1.5rem auto 2rem; /* Adds space above and below */
+        line-height: 1.8;
+        color: #444;
+        text-align: center;
+      }
+
+    section#intro {
+      padding-bottom: 2rem; /* Less space below the intro section */
+    }
+
+
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 1rem;
+      color: #c71585;
+      text-shadow: 1px 1px #fff;
+    }
+
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 90%;
+      color: var(--text-light);
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 90%;
+      height: auto;
+      border-radius: 12px;
+      margin-top: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .love-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    .card {
+      background: #fff0f5;
+      border-radius: 16px;
+      padding: 1rem;
+      width: clamp(180px, 40vw, 250px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px dashed var(--accent-pink);
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 1rem;
+      justify-items: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 2px solid var(--accent-pink);
+      margin: 0 auto;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-heart {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center;
+      background-size: contain;
+      animation: float 10s infinite linear;
+      opacity: 0.5;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#intro">Yashi</a>
+    <a href="#love">What I Love About Her</a>
+    <a href="#photos">Photos of Her</a>
+  </nav>
+
+  <section id="intro">
+    <h1>Yashi</h1>
+    <img src="Photos/yashi-11.JPEG" alt="Yashi smiling">
+    <br>
+    <p>She's the reason this page exists. Her smile, her soul, her presence — everything about her deserves to be celebrated. She is my world, and she is the biggest reason of my happiness. Everyday I wake up to be in awe of how amazing she is. She deserves to experience all the happy and fun things that life has to offer. I love her so much, it's not even funny. She makes me want to live life to the fullest :D I</p>
+  </section>
+
+  <section id="love">
+    <h1>What I Love About Her</h1>
+    <div class="love-cards">
+      <div class="card">
+        <h3>Her Smile</h3>
+        <p>It lights up my darkest days and makes everything feel okay :D</p>
+      </div>
+      <div class="card">
+        <h3>Her Kindness</h3>
+        <p>She cares deeply, and it shows in every little thing she does 💗</p>
+      </div>
+      <div class="card">
+        <h3>Her Laugh</h3>
+        <p>It’s contagious, pure, and the sweetest sound I know, that HEHEHEHE which instantly teleports me to cloud nine 😍</p>
+      </div>
+      <div class="card">
+        <h3>Her Face</h3>
+        <p>It makes me believe I am the luckiest man ever because she is a goddess ✨</p>
+      </div>
+      <div class="card">
+        <h3>Her Attitude</h3>
+        <p>She is my queen, and she never fails to slay 😝😎💅</p>
+      </div>
+      <div class="card">
+        <h3>Her Body</h3>
+        <p>Her body is SO TEA 🙏🙏</p>
+      </div>
+      <div class="card">
+        <h3>Her 'Angry Mode'</h3>
+        <p>She is so cute when she is angry 🎀</p>
+      </div>
+      <div class="card">
+        <h3>Her Name Calling me</h3>
+        <p>She makes me giggle when she says CHASMISH, NERD, IDIOT, PAGAL 😝🤭</p>
+      </div>
+      <div class="card">
+        <h3>LITERALLY EVERYTHING</h3>
+        <p>She makes me feel happy in everything. SHES LITERALLY PERFECT 🥰💖</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="photos">
+    <h1>Photos of Her</h1>
+    <div class="gallery">
+      <img src="Photos/yashi-1.jpg" alt="">
+      <img src="Photos/yashi-2.jpg" alt="">
+      <img src="Photos/yashi-3.jpg" alt="">
+      <img src="Photos/yashi-12.JPEG" alt="">
+      <img src="Photos/yashi-5.jpg" alt="">
+      <img src="Photos/yashi-6.jpg" alt="">
+      <img src="Photos/yashi-7.jpg" alt="">
+      <img src="Photos/yashi-8.jpg" alt="">
+      <img src="Photos/yashi-9.jpg" alt="">
+      <img src="Photos/yashi-10.jpg" alt="">
+      <img src="Photos/yashi-13.JPEG" alt="">
+    </div>
+  </section>
+
+  <!-- Floating hearts animation -->
+  <script>
+    const heartCount = 30;
+    for (let i = 0; i < heartCount; i++) {
+      const heart = document.createElement('div');
+      heart.className = 'floating-heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.animationDuration = (5 + Math.random() * 5) + 's';
+      heart.style.opacity = Math.random() * 0.7 + 0.3;
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
